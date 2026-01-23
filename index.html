@@ -113,10 +113,11 @@
         <p>Have an idea? Let’s discuss how I can help.</p>
         
         <div class="contact-wrapper">
-            <form id="contact-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" rows="5" required></textarea>
+            <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+                <input type="hidden" name="access_key" value="6cb48fa0-dc7c-41b9-8172-286ab39798b4">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" rows="5" required></textarea>
                 <button type="submit" class="btn btn-dark">Send Message</button>
             </form>
         </div>
