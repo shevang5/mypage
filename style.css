@@ -25,6 +25,35 @@ body {
     padding: 80px 0;
 }
 
+@font-face {
+  font-family: 'ArchivoBlack';
+  src: url('./fonts/Archivo-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Delirium';
+  src: url('./fonts/DeliriumNcv-Vm5e.ttf') format('truetype');
+}
+
+/* Optional: Connect them to Tailwind names */
+@layer base {
+  .font-shevang {
+    font-family: 'ArchivoBlack', sans-serif;
+  }
+  .font-palgamkar {
+    font-family: 'Delirium', sans-serif;
+  }
+}
+
+.text-stroke-2 {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--stroke-color, currentColor);
+  text-stroke-width: 2px;
+  text-stroke-color: var(--stroke-color, currentColor);
+  color: transparent;
+}
+
+
 /* Typography */
 h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 20px; }
 h2 { font-size: 2rem; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px; }
