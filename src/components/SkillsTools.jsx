@@ -22,7 +22,7 @@ export default function SkillsTools() {
 
   return (
     <div className="skills-container">
-      <header className="skills-header md:px-96">My Skills</header>
+      <header className="skills-header w-full bg-black text-center ">My Skills</header>
       
       <main className="skills-main py-20">
         

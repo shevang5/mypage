@@ -12,7 +12,7 @@ import BookSlider from "./components/BookSlider.jsx";
 
 export default function App() {
   return (
-    <div className="text-black bg-white">
+    <div className="text-white bg-black">
       <NavBar />
       <Hero />
       {/* <AboutWindow /> */}

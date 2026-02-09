@@ -1,77 +1,60 @@
-import { useState } from "react";
+import React from "react";
 
-const ACCESS_KEY = "6cb48fa0-dc7c-41b9-8172-286ab39798b4";
-
-export default function Contact() {
-  const [isSending, setIsSending] = useState(false);
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-    formData.append("access_key", ACCESS_KEY);
-
-    setIsSending(true);
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        alert("Success! Your message has been sent.");
-        form.reset();
-      } else {
-        alert("Error: " + data.message);
-      }
-    } catch (error) {
-      alert("Something went wrong. Please try again.");
-    } finally {
-      setIsSending(false);
-    }
-  };
-
+const Contact = () => {
   return (
-    <section id="contact" className="w-[90%] max-w-[1100px] mx-auto py-20">
-      <h2 className="text-2xl uppercase tracking-[2px] mb-4">Let's Work Together</h2>
-      <p className="mb-8">Have an idea? Let's discuss how I can help.</p>
+    <div id="contact" className="h-[50vw] bg-black flex items-center justify-center px-4">
+      <div className="w-full max-w-lg bg-black rounded-2xl shadow-lg p-8">
+        <h2 className="text-2xl uppercase text-center tracking-[2px] mb-4">Contact Me</h2>
 
-      <div className="w-full">
-        <form id="contact-form" onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-[600px]">
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            required
-            className="border border-gray-300 px-4 py-3"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            required
-            className="border border-gray-300 px-4 py-3"
-          />
-          <textarea
-            name="message"
-            placeholder="Message"
-            rows="5"
-            required
-            className="border border-gray-300 px-4 py-3"
-          ></textarea>
+        <form className="space-y-5">
+          {/* Name */}
+          <div>
+            <label className="block text-sm text-gray-400 mb-1">
+              Name
+            </label>
+            <input
+              type="text"
+              placeholder="Your name"
+              className="w-full rounded-lg bg-gray-800 border border-gray-700 text-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+
+          {/* Email */}
+          <div>
+            <label className="block text-sm text-gray-400 mb-1">
+              Email
+            </label>
+            <input
+              type="email"
+              placeholder="you@example.com"
+              className="w-full rounded-lg bg-gray-800 border border-gray-700 text-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+
+          {/* Message */}
+          <div>
+            <label className="block text-sm text-gray-400 mb-1">
+              Message
+            </label>
+            <textarea
+              rows="5"
+              placeholder="Write your message..."
+              className="w-full rounded-lg bg-gray-800 border border-gray-700 text-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+
+          {/* Button */}
           <button
             type="submit"
-            disabled={isSending}
-            className="inline-flex items-center justify-center border border-black px-6 py-3 font-semibold transition hover:bg-black hover:text-white disabled:cursor-not-allowed disabled:opacity-70"
+            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-lg transition duration-200"
           >
-            {isSending ? "Sending..." : "Send Message"}
+            Send Message
           </button>
         </form>
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default Contact;
+

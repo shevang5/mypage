@@ -1,0 +1,82 @@
+@import url("https://fonts.bunny.net/css?family=jura:300,500");
+
+/* ========== Base styles ========== */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light dark;
+
+  --bg-dark: rgb(16, 24, 40);
+  --bg-light: rgb(248, 244, 238);
+  --txt-light: rgb(10, 10, 10);
+  --txt-dark: rgb(245, 245, 245);
+
+  --line-light: rgba(0 0 0 / 0.25);
+  --line-dark: rgba(255 255 255 / 0.25);
+
+  --clr-bg: light-dark(var(--bg-light), var(--bg-dark));
+  --clr-txt: light-dark(var(--txt-light), var(--txt-dark));
+  --clr-lines: light-dark(var(--line-light), var(--line-dark));
+}
+
+body {
+  
+}
+
+/* ========== Nav styles ========== */
+
+.nav {
+  --gap: 1rem;
+  --rgb: 0 105 168;
+  --rgb-cta: 246 51 154;
+  background-color: transparent;
+  color: var(--clr-txt);
+  /* min-height: 100svh; */
+  margin: 0;
+  padding: 2rem;
+  font-family: "Jura", sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+.menu {
+  display: flex;
+  gap: var(--gap);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  font-size: clamp(0.75rem, 1.2vw + 0.25rem, 1.1rem);
+  color: rgb(var(--rgb));
+}
+
+.menu li.cta {
+  --rgb: var(--rgb-cta);
+}
+
+.menu li + li::before {
+  content: "·";
+  margin-right: var(--gap);
+}
+
+.menu a {
+  color: inherit;
+  text-decoration: none;
+  transition: text-shadow 300ms ease-in;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  outline: none;
+  text-shadow:
+    0 2ex rgb(var(--rgb) / 0.35),
+    0 -2ex rgb(var(--rgb) / 0.35),
+    0 4ex rgb(var(--rgb) / 0.15),
+    0 -4ex rgb(var(--rgb) / 0.15),
+    0 6ex rgb(var(--rgb) / 0.075),
+    0 -6ex rgb(var(--rgb) / 0.075);
+}
