@@ -36,7 +36,7 @@ const BookSlider = () => {
 
   return (
     <div className='h-screen flex flex-col justify-center' style={{ padding: '40px', backgroundColor: '#000' }}>
-      <h2 className="text-2xl uppercase text-center tracking-[2px] mb-9">MY PROJECTS</h2>
+      <h2 className="text-2xl uppercase text-center tracking-[2px] mb-9">BOOKS I READ</h2>
       
       <div 
         ref={scrollRef}

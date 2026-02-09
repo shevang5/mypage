@@ -55,7 +55,11 @@ body {
 }
 
 .menu li.cta {
-  --rgb: var(--rgb-cta);
+  color: red;
+}
+
+.menu li.services {
+  color: rgb(255, 255, 255);
 }
 
 .menu li + li::before {
