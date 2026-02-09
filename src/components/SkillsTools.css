@@ -1,7 +1,7 @@
 .skills-container {
   margin: 0;
   padding: 0;
-  width: 100vw;
+  /* width: 100vw; */
   height: 30vh;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 3.25rem;
+  /* padding: 0 3.25rem; */
   color: white;
   z-index: 10;
 }
