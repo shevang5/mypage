@@ -30,7 +30,7 @@ const projectData = [
 
 const Projects = () => {
   return (
-    <div className="bg-black  py-36 dark text-white">
+    <div className="bg-black  py-36 px-5 dark text-white">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-2xl uppercase text-center tracking-[2px] mb-9">MY PROJECTS</h2>
         
@@ -59,9 +59,9 @@ const Projects = () => {
               </CardHeader>
               
               <CardFooter>
-                <Button className="w-full bg-white text-black hover:bg-zinc-200">
+                <a href={project.url} className="w-full bg-white text-black hover:bg-zinc-200 p-1 rounded-sm">
                   View Project
-                </Button>
+                </a>
               </CardFooter>
             </Card>
           ))}
