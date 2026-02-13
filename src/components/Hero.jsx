@@ -41,7 +41,7 @@ const Hero = () => {
 
   return (
     <div id="app" style={containerStyle} className="relative bg-white">
-      <canvas ref={canvasRef} id="canvas" className="absolute inset-0 w-full md:h-full h-[40vw] opacity-100"></canvas>
+      <canvas ref={canvasRef} id="canvas" className="absolute inset-0 w-full md:h-full h-[70vw] opacity-100"></canvas>
       <div className="relative z-10 flex flex-col items-center md:justify-center justify-start pt-40 md:pt-0 h-full gap-4 text-white">
         <img src="/web-page-images/hero-svg.svg" alt="Hero illustration" className="max-w-[920px] w-[80%]" />
         <p className="max-w-[920px] w-[80%]">I design and develop fast, responsive, and user-friendly websites and web applications that help individuals and businesses build a strong online presence.</p>
